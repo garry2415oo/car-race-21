@@ -28,9 +28,10 @@ function draw(){
 }
 
 function changePosition(x,y){
-   data.ref('ball/position').set({
+    //changed spellings from data to database
+   database.ref('ball/position').set({
        'x': position.x+x,
-       'y': position.y+y,
+       'y': position.y+y
 
 
    }
@@ -39,8 +40,8 @@ function changePosition(x,y){
    )
 }
 function readPosition(data){
-position= data,val()
-ball.x= psition.x
+position= data.val() //removed comma and put dot
+ball.x= position.x //changed spellings of position
 ball.y= position.y
 
 }
